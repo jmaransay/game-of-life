@@ -6,6 +6,10 @@ jdk:
 - oraclejdk9
 - openjdk8
 
+matrix:
+  allow_failures:
+  - jdk: oraclejdk9
+
 script:
  - mvn install
  - mvn verify
