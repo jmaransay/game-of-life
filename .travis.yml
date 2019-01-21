@@ -8,4 +8,4 @@ jdk:
 
 script:
  - mvn install
- - mvn jetty:run
+ - mvn verify
