@@ -9,7 +9,8 @@ jdk:
 matrix:
   allow_failures:
   - jdk: oraclejdk9
-
-script:
- - mvn install
- - mvn verify
+  
+install:
+ - apt-get install nmap
+ - add-apt-repository ppa:cpick/hub
+ - apt-get install hub
