@@ -1,23 +1,21 @@
-
 language: java
-
 jdk:
 - oraclejdk8
 - oraclejdk9
 - openjdk8
-
 matrix:
- allow_failures:
- - jdk: oraclejdk9
-
+  allow_failures:
+  - jdk: oraclejdk9
 install:
 - sudo apt-get install -y nmap
 - sudo add-apt-repository -y ppa:cpick/hub
 - sudo apt-get update
- 
 script:
 - mvn test -B
- 
 after_success:
-        - mvn clean test cobertura:cobertura coveralls:report
-
+- mvn clean test cobertura:cobertura coveralls:report
+deploy:
+  provider: heroku 
+  api_key:
+    secure: UZB7pwpMozBDuqxwANEc8yfhy4oDJdA2bB6S119DLtUH+HOx1anMAspokgjdRLCfttpkuHu8gw6Ojw8tvoraSyYixHgDfj0F3XTaWuqNi3k/zw4QZkzRu5uaH0lysttVbKGSvqJrF9le1eZH/RSLidslGvsbPR+6r3+sbA7TvtggKHCG8XjEISb0jmFQvzjn1uBwq/VA4NkpE9/sYuj0qOd0mtw+Gfbwq4pHFpui4FiCBkRk2xaisHy52w3vJsGnRkxEfHHh42duNBEhA3lHcfZNZabeq5vXx+xdaFSn2/+HKlgouxji8cnRcv94KS86aeonPhIJnLfB29fanxA+VCgVLaurd4LrkT0ykdkIHVdB98yTZl8KC3EXrnfyTnypg0t5uAJr14arUMmBbn/zk9UW57rkSDuQ1u7sYKH/HSyj0rKvvJ5VQ+4yQCC3rgg+GirJd23QGiyCvuShRp0uwN58LghUULKcEzUhDkhF7hTLy2hhr1eaBmwcap10Pgtjk+KzDqwlY+tqrpNC11//MODU2FwmP1KiqWXXracPyru2EKmoal6Q8befWILNxnikk8d7V6JBCM/rRlD8WVH+F1QKQZ/kkpzQa8TIu2OnIfy9SHln4IXk9phBcmvTLJ+MLtNEOER5cSRRN2pWr3pPRkZvTvy7T0eFwJhJZz0La4c=
+  skip_cleanup: true
