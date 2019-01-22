@@ -9,8 +9,8 @@ jdk:
 matrix:
   allow_failures:
   - jdk: oraclejdk9
-  
+
 install:
- - sudo apt-get install nmap
- - sudo add-apt-repository ppa:cpick/hub
- - sudo apt-get install hub
+ - sudo apt-get install -y nmap
+ - sudo add-apt-repository -y ppa:cpick/hub
+ - sudo apt-get install -y hub
