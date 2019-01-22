@@ -11,6 +11,6 @@ matrix:
   - jdk: oraclejdk9
   
 install:
- - apt-get install nmap
- - add-apt-repository ppa:cpick/hub
- - apt-get install hub
+ - sudo apt-get install nmap
+ - sudo add-apt-repository ppa:cpick/hub
+ - sudo apt-get install hub
