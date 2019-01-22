@@ -19,5 +19,5 @@ script:
 - mvn test -B
  
 after_success:
-        - mvn clean test cobertura:cobertura coveralls:report
+- mvn clean test jacoco:report coveralls:report
 
