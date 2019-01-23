@@ -12,8 +12,9 @@ install:
 - sudo apt-get update
 script:
 - mvn test -B
+- mvn install
 - cd gameoflife-web
-- mvn package
+- mvn deploy
 after_success:
 - mvn clean test jacoco:report coveralls:report
 deploy:
