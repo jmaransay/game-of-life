@@ -14,7 +14,7 @@ script:
 - mvn test -B
 - mvn install
 - cd gameoflife-web
-- mvn deploy
+- mvn install
 after_success:
 - mvn clean test jacoco:report coveralls:report
 deploy:
